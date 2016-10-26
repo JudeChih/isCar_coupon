@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+// color
+$main_color: #F26531;
+$main_color_gradient: linear-gradient(to bottom,#FF7e4b 0,#F26531 100%);
+$sup_color: #333333;
+$light_bg_color:#888888;
+$active_color: #0F832F;
+$black_color: #000000;
+$black_color_gradient: linear-gradient(to bottom,#2c2c2c 0,#111 100%);
+$deep_black_color_gradient: linear-gradient(to bottom,#1c1c1c 0,#000 100%);
+$white_color: #ffffff;
+$light_white_color: #F0F0F0;
+
+// shadow
+$box_shadow_inset:0px 0px 1px 1px rgba(40%,40%,40%,1) inset;
+$box_shadow:2px 2px 2px rgba(20%,20%,20%,0.6),4px 4px 6px rgba(20%,20%,20%,0.4),6px 6px 12px rgba(20%,20%,20%,0.4);
+
+// custom setting
+$font_h1:30px;
+$font_h2:25px;
+$head_height:50px;
+
+@mixin font_reset {
+    margin-top:0;
+    margin-bottom:0;
+}
+
+html,body{
+	font-family: 'Noto Sans TC','Josefin Sans', sans-serif;
+	width: 100%;
+	height: 100%;
+	background-color:$sup_color;
+	#wrapper{
+		position:relative;
+//// header
+		header{
+			height:$head_height;
+			background-image:$black_color_gradient;
+			&>a{
+				height:100%;
+				display:block;
+				background:url(../../images/logo_iscar.png) no-repeat center center;
+				background-color:$main_color;
+				color:$white_color;
+			}
+			.nav_style{
+				&>div{
+			    z-index: 999;
+			    position: relative;
+			    background-image: $black_color_gradient;
+				}
+				&>.collapse{
+					background-color:$black_color;
+				}
+				li.active{
+					a{
+						background-image: linear-gradient(to bottom,$active_color 0,$active_color 100%);
+					}
+				}
+				&>a{
+					background-color: $black_color;
+				}
+				.navbar-header{
+					a{
+						background-image: $main_color_gradient;
+					}
+				}
+				.dropdown-menu{
+					border:none;
+				}
+				.navbar-right{
+					margin-right: 0;
+				}
+			}
+			.navbar{
+				border:none;
+				border-radius: 0;
+			}
+		}
+//// home page style
+		.index_content{
+			background-color: $light_bg_color;
+			box-shadow:$box_shadow_inset;
+			.content_box{
+				padding: 20px;
+				.h2_style{
+					background-color: $main_color;
+					color:$white_color;
+					text-align: center;
+					padding: 10px 0;
+					h2{
+						font-size:$font_h2;
+						@include font_reset;
+					}
+				}
+				.aa{
+					height:100px;
+					background-color: $light_white_color;
+					box-shadow:$box_shadow_inset;
+				}
+			}
+		}
+//// login page style
+		.login_content{
+			background-color:$light_bg_color;
+			box-shadow:$box_shadow_inset;
+			@media only screen and (max-width:767px) {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			.login_form{
+				border-radius:10px;
+				margin-top:50px;
+				margin-bottom:50px;
+				background-color:$white_color;
+				box-shadow:$box_shadow;
+				.title{
+					border-radius:5px 5px 0 0;
+					background-color:$main_color;
+					h1{
+						color:$white_color;
+						text-align:center;
+						padding:10px;
+						font-size:$font_h1;
+						@include font_reset;
+					}
+				}
+				form{
+					border-radius: 0 0 5px 5px;
+					color:$white_color;
+					background-color:$sup_color;
+					padding:20px;
+					label{
+						font-weight:300;
+					}
+				}
+			}
+		}
+//// it just is a footer box
+		.box_box{
+			display: block;
+			height:$head_height;
+		}
+//// footer style
+		footer{
+			&.index_footer{
+				position: fixed;
+				bottom:0;
+			}
+			height:$head_height;
+			background-image:$deep_black_color_gradient;
+			color:$white_color;
+			line-height:$head_height;
+			text-align:center;
+		}
+	}
+//// common setting
+	.p_l_r{
+		padding-left:0;
+		padding-right:0;
+	}
+	.j_center{
+		text-align:center;
+	}
+}
+//// RWD
+@media only screen and (max-width:767px) {
+
+}
+
+
